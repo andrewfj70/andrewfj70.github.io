@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="哪吒图片 - 本站提供高清哪吒形象、哪吒三太子壁纸、哪吒动漫素材及传统文化插画资源，涵盖封神演义、哪吒闹海等多种风格的高清图片下载与在线预览。">
+    <meta name="keywords" content="哪吒图片,哪吒壁纸,哪吒素材,哪吒头像,封神演义图片,哪吒动漫">
+    <title>哪吒图片 - 高清哪吒形象素材与壁纸下载站</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f1faee;
+            --text-color: #333;
+            --light-text: #666;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 6px 16px;
+            border: 1px solid #eee;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 0.9rem;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--light-text);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #457b9d 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+
+        .sidebar-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-color);
+            color: var(--secondary-color);
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--light-text);
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .category-list a:hover {
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+        }
+
+        .category-list a span.count {
+            background: #eee;
+            color: #666;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* Content Area */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 16px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .view-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-filter {
+            padding: 8px 16px;
+            border: 1px solid #eee;
+            background: transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-filter.active {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .sort-select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+            outline: none;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .image-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .image-wrapper {
+            position: relative;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-card:hover .image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(29, 53, 87, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .image-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .overlay-btn {
+            background: white;
+            color: var(--secondary-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--light-text);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .featured-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .featured-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .featured-item {
+            position: relative;
+            min-height: 300px;
+        }
+
+        .featured-item:first-child {
+            border-right: 1px solid #eee;
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+        }
+
+        .featured-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .featured-content p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Loading & Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 40px;
+        }
+
+        .page-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            border: 1px solid #eee;
+            background: var(--card-bg);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .page-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                display: none; /* Hide sidebar on mobile for simplicity */
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-item:first-child {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .header-container {
+                padding: 0 10px;
+            }
+
+            nav ul {
+                display: none; /* Simplify nav for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">哪吒<span>图片</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">高清壁纸</a></li>
+                <li><a href="#">插画素材</a></li>
+                <li><a href="#">动漫形象</a></li>
+                <li><a href="#">关于哪吒</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索哪吒图片...">
+            <button type="button">🔍</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>探索哪吒的奇幻世界</h1>
+        <p>汇集封神演义、哪吒闹海、现代动漫及影视作品中的经典形象，为您提供高清、无版权风险的哪吒图片素材。</p>
+        <div class="hero-tags">
+            <span class="tag">哪吒闹海</span>
+            <span class="tag">封神榜</span>
+            <span class="tag">哪吒三太子</span>
+            <span class="tag">少年哪吒</span>
+            <span class="tag">魔童降世</span>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <aside>
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">图片分类</h3>
+            <ul class="category-list">
+                <li><a href="#">全部图片 <span class="count">1,204</span></a></li>
+                <li><a href="#">高清壁纸 <span class="count">856</span></a></li>
+                <li><a href="#">Q版头像 <span class="count">320</span></a></li>
+                <li><a href="#">古风插画 <span class="count">210</span></a></li>
+                <li><a href="#">电影剧照 <span class="count">150</span></a></li>
+                <li><a href="#">游戏原画 <span class="count">95</span></a></li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">热门标签</h3>
+            <ul class="category-list">
+                <li><a href="#">红绫</a></li>
+                <li><a href="#">混天绫</a></li>
+                <li><a href="#">乾坤圈</a></li>
+                <li><a href="#">风火轮</a></li>
+                <li><a href="#">莲花化身</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="filter-bar">
+            <div class="view-options">
+                <button class="btn-filter active">全部</button>
+                <button class="btn-filter">壁纸</button>
+                <button class="btn-filter">插画</button>
+                <button class="btn-filter">头像</button>
+            </div>
+            <select class="sort-select">
+                <option>按热度排序</option>
+                <option>按时间排序</option>
+                <option>按分辨率排序</option>
+            </select>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Card 1 -->
+            <article class="image-card">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/seed/nezha1/400/400" alt="哪吒高清壁纸">
+                    <div class="card-overlay">
+                        <span class="overlay-btn">查看大图</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">哪吒闹海·经典剧照</h3>
+                    <div class="card-meta">
+                        <span>4K壁纸</span>
+                        <span>1.2w次浏览</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="image-card">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/seed/nezha2/400/400" alt="魔童哪吒Q版头像">
+                    <div class="card-overlay">
+                        <span class="overlay-btn">查看大图</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">魔童降世·Q版头像</h3>
+                    <div class="card-meta">
+                        <span>头像素材</span>
+                        <span>8.5k次浏览</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="image-card">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/seed/nezha3/400/400" alt="哪吒古风插画">
+                    <div class="card-overlay">
+                        <span class="overlay-btn">查看大图</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">封神演义·古风插画</h3>
+                    <div class="card-meta">
+                        <span>插画</span>
+                        <span>5.6k次浏览</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="image-card">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/seed/nezha4/400/400" alt="哪吒三太子高清图">
+                    <div class="card-overlay">
+                        <span class="overlay-btn">查看大图</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">哪吒三太子·全身像</h3>
+                    <div class="card-meta">
+                        <span>高清图</span>
+                        <span>3.2k次浏览</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="image-card">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/seed/nezha5/400/400" alt="哪吒与龙王">
+                    <div class="card-overlay">
+                        <span class="overlay-btn">查看大图</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">哪吒闹海·对战龙王</h3>
+                    <div class="card-meta">
+                        <span>电影剧照</span>
+                        <span>9.1k次浏览</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="image-card">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/seed/nezha6/400/400" alt="哪吒红绫特写">
+                    <div class="card-overlay">
+                        <span class="overlay-btn">查看大图</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">混天绫·红绫特写</h3>
+                    <div class="card-meta">
+                        <span>细节图</span>
+                        <span>2.4k次浏览</span>
+                    </div>
+                </div>
+            </article>
+
+             <!-- Card 7 -->
+             <article class="image-card">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/seed/nezha7/400/400" alt="少年哪吒">
+                    <div class="card-overlay">
+                        <span class="overlay-btn">查看大图</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">少年哪吒·坚毅眼神</h3>
+                    <div class="card-meta">
+                        <span>壁纸</span>
+                        <span>7.8k次浏览</span>
+                    </div>
+                </div>
+            </article>
+
+             <!-- Card 8 -->
+             <article class="image-card">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/seed/nezha8/400/400" alt="哪吒莲花身">
+                    <div class="card-overlay">
+                        <span class="overlay-btn">查看大图</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">莲花化身·重生图</h3>
+                    <div class="card-meta">
+                        <span>插画</span>
+                        <span>4.5k次浏览</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="pagination">
+            <button class="page-btn disabled">&lt;</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">5</button>
+            <button class="page-btn">&gt;</button>
+        </div>
+    </main>
+</div>
+
+<section class="featured-section">
+    <div class="featured-header">
+        <h3 class="featured-title">🎨 编辑精选专题</h3>
+        <a href="#" style="font-size: 0.9rem; color: var(--primary-color);">查看更多 &rarr;</a>
+    </div>
+    <div class="featured-grid">
+        <div class="featured-item">
+            <img src="https://picsum.photos/seed/nezha_feat1/800/600" alt="哪吒形象演变史">
+            <div class="featured-content">
+                <h3>哪吒形象演变史</h3>
+                <p>从古典戏曲到现代动画，探索哪吒这一文化符号的百年变迁。</p>
+            </div>
+        </div>
+        <div class="featured-item">
+            <img src="https://picsum.photos/seed/nezha_feat2/800/600" alt="哪吒元素设计指南">
+            <div class="featured-content">
+                <h3>哪吒元素设计指南</h3>
+                <p>如何运用红绫、风火轮等元素打造独特的国潮风格设计。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>哪吒图片网</h4>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.8;">
+                专注提供高质量哪吒相关图片资源，致力于弘扬中国传统文化与神话艺术。所有图片仅供个人欣赏与学习使用。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">版权声明</a></li>
+                <li><a href="#">投稿指南</a></li>
+                <li><a href="#">联系客服</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>资源分类</h4>
+            <ul>
+                <li><a href="#">高清壁纸</a></li>
+                <li><a href="#">动漫素材</a></li>
+                <li><a href="#">古风插画</a></li>
+                <li><a href="#">头像素材</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>关注我们</h4>
+            <ul>
+                <li><a href="#">微信公众号</a></li>
+                <li><a href="#">微博话题</a></li>
+                <li><a href="#">加入社群</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 哪吒图片网 版权所有 | 仅供学习交流使用，请勿商用</p>
+    </div>
+</footer>
+
+</body>
+              </html>
