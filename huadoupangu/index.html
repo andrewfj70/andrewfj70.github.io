@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="花都盘古王公园官方介绍页面。提供公园概况、历史传说、主要景点（盘古神像、文化广场等）、开放时间、交通指南及游玩攻略。">
+    <meta name="keywords" content="花都盘古王公园,盘古王公园,广州花都公园,盘古文化,广州旅游">
+    <title>花都盘古王公园-广州花都历史文化与自然风光游览指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513; /* SaddleBrown - Earthy/Brown tone */
+            --secondary-color: #D2691E; /* Chocolate - Lighter brown */
+            --accent-color: #F4A460; /* SandyBrown - Highlight */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #F9F7F2; /* Creamy background */
+            --white: #FFFFFF;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/seed/pangu/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: var(--accent-color);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Attractions Section */
+        .attractions {
+            padding: 5rem 0;
+            background-color: var(--bg-light);
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            height: 200px;
+            width: 100%;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .card-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Info Grid */
+        .info-section {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .info-item i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .info-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Cultural Section */
+        .culture {
+            padding: 5rem 0;
+            background-color: #f4f4f4;
+        }
+
+        .culture-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .culture-block {
+            display: flex;
+            gap: 2rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            align-items: flex-start;
+        }
+
+        .culture-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-question.active::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-light);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid, .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .culture-block {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>盘古</span>王公园
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="active">公园概况</a></li>
+                    <li><a href="#attractions">主要景点</a></li>
+                    <li><a href="#culture">盘古文化</a></li>
+                    <li><a href="#guide">游览指南</a></li>
+                </ul>
+            </nav>
+            <a href="#guide" class="cta-button">购票/咨询</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>花都盘古王公园</h1>
+            <p>探寻中华创世神话，体验岭南生态园林。位于广州花都区狮岭镇，是集文化、旅游、休闲于一体的城市公园。</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn-primary">了解公园</a>
+                <a href="#attractions" class="btn-outline">浏览景点</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>公园概况</h2>
+                <p>About Panwang Park</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/pangu2/600/400" alt="花都盘古王公园全景图">
+                </div>
+                <div class="about-text">
+                    <h3>中华创世文化的圣地</h3>
+                    <p>花都盘古王公园是以“盘古文化”为主题的大型公园，坐落于广州市花都区狮岭镇山前旅游大道旁。公园依山而建，环境清幽，林木葱郁，是感受中华传统文化与自然风光的绝佳去处。</p>
+                    <p>公园内不仅拥有保存完好的盘古王墓、盘古祠等历史遗迹，还通过雕塑、碑刻、浮雕等形式，生动再现了盘古开天辟地的神话传说。这里不仅是市民休闲健身的好地方，更是了解岭南民俗文化和中华文明起源的重要窗口。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section id="attractions" class="attractions">
+        <div class="container">
+            <div class="section-title">
+                <h2>主要景点</h2>
+                <p>Must-Visit Spots</p>
+            </div>
+            <div class="attractions-grid">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/statue/400/300" alt="盘古神像" class="card-image">
+                    <div class="card-content">
+                        <h3>盘古神像</h3>
+                        <p>公园内高大的盘古神像庄严肃穆，象征着开天辟地的力量与智慧，是游客祈福和合影的热门地点。</p>
+                        <a href="#" class="card-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/temple/400/300" alt="盘古祠" class="card-image">
+                    <div class="card-content">
+                        <h3>盘古祠</h3>
+                        <p>盘古祠是公园的核心建筑，古色古香，供奉着盘古神灵，是进行祭拜、宗族聚会和了解盘古文化历史的重要场所。</p>
+                        <a href="#" class="card-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/mountain/400/300" alt="登山步道" class="card-image">
+                    <div class="card-content">
+                        <h3>登山步道</h3>
+                        <p>公园依山而建，拥有蜿蜒曲折的登山步道。沿途绿树成荫，空气清新，适合徒步锻炼，登高望远可俯瞰花都美景。</p>
+                        <a href="#" class="card-link">查看详情 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="culture">
+        <div class="container">
+            <div class="section-title">
+                <h2>盘古文化</h2>
+                <p>Pangu Culture</p>
+            </div>
+            <div class="culture-content">
+                <div class="culture-block">
+                    <div class="culture-icon">☯</div>
+                    <div>
+                        <h3>开天辟地</h3>
+                        <p>盘古是中国神话中开天辟地的始祖。在盘古王公园，游客可以通过“盘古开天”的大型浮雕和雕塑，直观地感受这一神话传说的震撼力量，理解“一元重数”的宇宙观。</p>
+                    </div>
+                </div>
+                <div class="culture-block">
+                    <div class="culture-icon">🛡</div>
+                    <div>
+                        <h3>护佑一方</h3>
+                        <p>在花都当地，盘古王被视为“护佑一方平安”的神灵。每年盘古王诞辰（农历二月十二），当地都会举行盛大的祭祀活动，舞龙舞狮、唱大戏，传承着深厚的民俗传统。</p>
+                    </div>
+                </div>
+                <div class="culture-block">
+                    <div class="culture-icon">🧬</div>
+                    <div>
+                        <h3>生命起源</h3>
+                        <p>盘古神话蕴含着朴素的宇宙生成论和生命起源论。公园内的文化长廊通过图文并茂的方式，向公众科普盘古文化在现代社会的意义，弘扬尊老爱幼、开拓进取的精神。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section id="guide" class="info-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>游览指南</h2>
+                <p>Travel Guide</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <i>🕒</i>
+                    <h4>开放时间</h4>
+                    <p>每日 08:00 - 17:30 (17:00 停止入园)</p>
+                </div>
+                <div class="info-item">
+                    <i>📍</i>
+                    <h4>地理位置</h4>
+                    <p>广州市花都区狮岭镇山前大道旅游大道26号</p>
+                </div>
+                <div class="info-item">
+                    <i>🚗</i>
+                    <h4>交通方式</h4>
+                    <p>地铁9号线马鞍山公园站转公交，或自驾导航至公园停车场。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>常见问题</h2>
+                <p>FAQ</p>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">花都盘古王公园需要门票吗？</button>
+                <div class="faq-answer">
+                    <p>花都盘古王公园目前是免费开放的，市民和游客无需购票即可入园游览。建议关注公园官方通知，了解是否有临时闭园或维护情况。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">公园适合带小孩去吗？</button>
+                <div class="faq-answer">
+                    <p>非常适合。公园内环境安全，绿化覆盖率高，设有登山步道和开阔的广场。家长可以带孩子登山锻炼，在盘古广场放风筝，寓教于乐。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">盘古王诞辰有什么活动？</button>
+                <div class="faq-answer">
+                    <p>每年农历二月十二是盘古王诞辰，公园通常会举办盛大的民俗文化节，包括祭祖仪式、文艺汇演、美食街等，是体验岭南传统文化的好时机。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于公园</h4>
+                    <p>花都盘古王公园致力于传承中华创世文化，打造集文化、生态、休闲于一体的城市公园。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">公园概况</a></li>
+                        <li><a href="#attractions">景点介绍</a></li>
+                        <li><a href="#culture">文化活动</a></li>
+                        <li><a href="#guide">交通指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>地址：广州市花都区狮岭镇山前大道</li>
+                        <li>电话：020-12345678</li>
+                        <li>邮箱：info@pangu-park.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 花都盘古王公园. All Rights Reserved. 本网站为信息展示页面，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', () => {
+                    // Toggle active class on question
+                    question.classList.toggle('active');
+                    
+                    // Get the answer
+                    const answer = question.nextElementSibling;
+                    
+                    // Toggle max-height for smooth animation
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                    
+                    // Close other open questions (optional, keeps UI clean)
+                    questions.forEach(otherQuestion => {
+                        if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                            otherQuestion.classList.remove('active');
+                            otherQuestion.nextElementSibling.style.maxHeight = null;
+                        }
+                    });
+                });
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
