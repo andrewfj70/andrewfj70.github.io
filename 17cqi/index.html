@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="17C起草网站提供专业的互联网内容合规审查、合同条款优化及法律文书起草服务。涵盖网络安全法、未成年人保护法等法规解读，助力企业及个人规避法律风险，确保内容安全合规。">
+    <meta name="keywords" content="17C起草,内容合规,法律文书,合同审查,网络安全,法规解读">
+    <title>17C起草-专业内容合规审查与法律文书起草服务平台</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-cta {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.8);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Service Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Compliance Process */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border-color);
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-white);
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 15px;
+        }
+
+        .step h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .step p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-question:hover {
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            padding-bottom: 20px;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>17C</span>起草
+            </a>
+            <nav class="nav-links">
+                <a href="#services">服务项目</a>
+                <a href="#process">服务流程</a>
+                <a href="#faq">常见问题</a>
+                <a href="#contact">联系我们</a>
+            </nav>
+            <a href="#contact" class="btn-cta">立即咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-tags">
+                    <span class="tag">内容安全</span>
+                    <span class="tag">法律合规</span>
+                    <span class="tag">专业起草</span>
+                </div>
+                <h1>专业内容合规审查<br>与法律文书起草服务</h1>
+                <p>依托互联网法律法规与行业规范，为您提供精准的17C起草解决方案。从合同条款优化到内容合规性审查，助力企业规避法律风险，确保业务稳健运行。</p>
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <a href="#contact" class="btn-cta">获取免费评估</a>
+                    <a href="#services" style="padding: 10px 24px; border: 1px solid var(--primary-color); border-radius: 6px; font-weight: 600;">了解详情</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心服务项目</h2>
+                    <p>针对不同业务场景，提供定制化的起草与审查服务</p>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card">
+                        <div class="service-icon">⚖️</div>
+                        <h3>合同与协议起草</h3>
+                        <p>涵盖服务协议、保密协议、授权委托书等各类法律文书。根据您的具体需求，起草严谨、条款完善的合同模板，保障双方权益。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🛡️</div>
+                        <h3>内容合规性审查</h3>
+                        <p>依据最新法律法规，对网站内容、用户协议、隐私政策进行深度审查。识别潜在风险点，提供修改建议，确保符合监管要求。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">📝</div>
+                        <h3>法律文书优化</h3>
+                        <p>对现有合同或协议进行修订优化，剔除模糊条款，明确责任边界，提升法律效力和执行可行性。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">📋</div>
+                        <h3>规章制度制定</h3>
+                        <p>为企业内部管理提供制度草案，包括员工手册、奖惩制度、信息安全管理制度等，建立规范化管理体系。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">💡</div>
+                        <h3>合规咨询与建议</h3>
+                        <p>提供关于互联网行业监管政策的专业解读，针对具体业务模式提供合规性建议和风险预警。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🤝</div>
+                        <h3>法律函件处理</h3>
+                        <p>协助起草律师函、告知函、催款函等法律文书，规范沟通流程，维护您的合法权益。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="section" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>服务流程</h2>
+                    <p>标准化的服务流程，确保服务质量与效率</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>需求沟通</h4>
+                        <p>详细了解您的起草需求、业务场景及特殊要求，明确服务目标。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>起草与审查</h4>
+                        <p>专业团队进行文书起草，并进行内部多轮审核与校对。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>反馈修改</h4>
+                        <p>根据您的反馈意见进行修改完善，直至达成一致。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>交付确认</h4>
+                        <p>最终定稿，交付电子版及必要的法律说明，提供售后支持。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                    <p>关于17C起草服务的常见疑问解答</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            什么是17C起草服务？
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            17C起草是指基于特定行业规范（如互联网内容安全、合同法务等）标准，由专业团队为您提供的法律文书撰写、合同审查及合规性咨询的辅助服务。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            起草的文书具有法律效力吗？
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            我们的文书起草服务旨在提供专业的法律文本参考和模板。最终的法律效力取决于双方当事人的签字盖章以及是否符合相关法律法规。建议在签署前咨询专业律师。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            审查服务主要针对哪些行业？
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            我们主要服务于互联网行业、软件开发、电商平台及各类企业提供合同起草、隐私政策制定及内容合规审查服务。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            如何开始我的起草需求？
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            您可以通过页面底部的联系方式与我们取得联系，或者直接点击“立即咨询”按钮，我们的客服团队将很快与您对接。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section" style="background-color: var(--primary-color); color: white;">
+            <div class="container" style="text-align: center;">
+                <h2 style="margin-bottom: 20px;">准备开始了吗？</h2>
+                <p style="margin-bottom: 30px; opacity: 0.9;">立即联系我们，获取专业的法律文书起草与合规建议。</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="mailto:contact@17cchufa.com" class="btn-cta" style="background: white; color: var(--primary-color);">发送邮件咨询</a>
+                    <a href="tel:400-123-4567" class="btn-cta" style="border: 1px solid white; color: white;">拨打服务热线</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>17C起草</h4>
+                    <p>致力于为企业和个人提供高效、专业的法律文书起草与合规审查服务，成为您值得信赖的法律顾问助手。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">服务项目</a></li>
+                        <li><a href="#process">服务流程</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul class="footer-links">
+                        <li>地址：北京市朝阳区法律科技园A座</li>
+                        <li>邮箱：contact@17cchufa.com</li>
+                        <li>电话：400-123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 17C起草服务平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
