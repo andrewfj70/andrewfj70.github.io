@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本林卡尔天然钙-深海生物钙补充剂与骨骼健康指南</title>
+    <meta name="description" content="日本林卡尔天然钙官方网站，提供深海鱼骨提取的天然钙补充剂信息。详细介绍林卡尔钙的成分优势、适用人群、科学补钙指南及产品选购建议，帮助用户科学应对骨质疏松与骨骼健康问题。">
+    <meta name="keywords" content="日本林卡尔天然钙, 林卡尔钙, 深海鱼骨钙, 补钙产品, 骨骼健康, 日本保健品">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #00a8cc;
+            --accent-color: #f0a500;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+            margin-left: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background-color: rgba(0, 86, 179, 0.1);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            border-radius: var(--border-radius);
+            background-color: var(--bg-light);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 15px;
+        }
+
+        /* Product Info Section */
+        .product-info {
+            padding: 80px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .info-image {
+            background-color: #eef2f5;
+            border-radius: var(--border-radius);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .info-content p {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+
+        .info-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+        }
+
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 0 auto 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background-color: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+            padding-right: 40px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        details[open] summary::after {
+            content: "-";
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-gray);
+            border-top: 1px solid #eee;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 28px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>日本林卡尔天然钙</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features">产品优势</a></li>
+                    <li><a href="#product">产品详情</a></li>
+                    <li><a href="#guide">补钙指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>源自深海，守护骨骼健康</h1>
+                <div class="hero-tags">
+                    <span class="tag">深海鱼骨提取</span>
+                    <span class="tag">高吸收率</span>
+                    <span class="tag">天然配方</span>
+                </div>
+                <p>日本林卡尔天然钙采用先进的深海鱼骨萃取技术，富含天然钙质与微量元素，是中老年人及儿童科学补钙的理想选择。了解如何通过天然钙产品改善钙流失问题。</p>
+                <div class="hero-buttons">
+                    <a href="#product" class="btn btn-primary">了解更多</a>
+                    <a href="#guide" class="btn btn-outline">补钙指南</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🐟</div>
+                        <h3>深海原料</h3>
+                        <p>精选深海鱼类骨骼作为原料，远离工业污染，确保钙源的纯净与安全。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧬</div>
+                        <h3>天然活性</h3>
+                        <p>保留了鱼骨中的天然有机钙形态，更接近人体骨骼结构，易于被身体吸收利用。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>多重营养</h3>
+                        <p>不仅补充钙质，还含有维生素D3及镁元素，协同作用，构建全面的骨骼防护网。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Info Section -->
+        <section id="product" class="product-info">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-content">
+                        <h2>为什么选择林卡尔天然钙？</h2>
+                        <p>随着年龄增长，人体对钙的吸收能力下降，单纯摄入无机钙往往难以满足需求。日本林卡尔天然钙通过特殊的生物技术处理，将鱼骨中的钙质转化为易于人体吸收的形态。</p>
+                        <ul class="info-list">
+                            <li>高纯度深海鱼骨粉</li>
+                            <li>天然有机钙，吸收率优于普通碳酸钙</li>
+                            <li>低致敏性，适合肠胃敏感人群</li>
+                            <li>日本食品卫生法认证，品质可靠</li>
+                        </ul>
+                        <br>
+                        <a href="#" class="btn btn-primary">查看产品规格</a>
+                    </div>
+                    <div class="info-image">
+                        <!-- Placeholder for product image -->
+                        <img src="https://picsum.photos/seed/linkeer/600/400" alt="日本林卡尔天然钙产品展示">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>科学补钙全指南</h2>
+                    <p>正确的补钙方式比单纯吃钙片更重要</p>
+                </div>
+                <div class="guide-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>确定需求量</h3>
+                        <p>根据年龄和性别，参考《中国居民膳食营养素参考摄入量》，确定每日钙摄入目标。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>选择优质钙源</h3>
+                        <p>优先选择含维生素D的钙剂，以及有机钙（如乳酸钙、柠檬酸钙），减少胃部负担。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>搭配维生素D</h3>
+                        <p>维生素D能促进钙的吸收，建议在早餐后服用，并适当增加日照时间。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>长期坚持</h3>
+                        <p>补钙是一个长期过程，需要持续摄入，同时配合运动，才能达到最佳效果。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container faq-container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                </div>
+                
+                <details>
+                    <summary>日本林卡尔天然钙适合哪些人群？</summary>
+                    <div class="faq-answer">
+                        <p>该产品特别适合中老年人、绝经后女性以及儿童青少年使用。对于骨骼发育期的人群，有助于骨骼强壮；对于中老年人，有助于预防骨质疏松。</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>如何判断自己缺钙？</summary>
+                    <div class="faq-answer">
+                        <p>缺钙的常见表现包括腿脚抽筋、关节疼痛、牙齿松动、易疲劳以及睡眠质量下降等。建议通过血液检查（如血钙、骨密度检测）来确诊。</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>服用林卡尔钙片有什么注意事项？</summary>
+                    <div class="faq-answer">
+                        <p>建议随餐服用或餐后立即服用，以减少对胃肠道的刺激。不要与浓茶、咖啡同时摄入，以免影响钙的吸收。如有特殊疾病史，请咨询医生。</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>天然钙和普通钙片有什么区别？</summary>
+                    <div class="faq-answer">
+                        <p>普通钙片多为无机钙（如碳酸钙），需要胃酸参与分解，部分人群可能出现胀气不适。天然钙通常指从动植物中提取的有机钙，吸收率相对较高，对肠胃刺激较小。</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        我们致力于提供专业的健康资讯与高品质的补钙产品推荐。通过科学的饮食指导，帮助每一位用户构建强健的骨骼系统。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#features">产品优势</a></li>
+                        <li><a href="#product">产品详情</a></li>
+                        <li><a href="#guide">补钙指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>客服热线：400-123-4567</li>
+                        <li>电子邮箱：support@example.com</li>
+                        <li>工作时间：9:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 日本林卡尔天然钙健康指南. All Rights Reserved. 本网站为信息展示平台，不作为医疗建议依据。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
