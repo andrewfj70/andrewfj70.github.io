@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="意浓咖啡 - 专注意式浓缩咖啡文化与品质生活。提供意式咖啡豆推荐、家庭咖啡机选购指南、咖啡拉花技巧教程及专业烘焙工艺解析。">
+    <meta name="keywords" content="意浓咖啡,意式浓缩,咖啡机,咖啡豆,咖啡拉花,精品咖啡">
+    <title>意浓咖啡-意式浓缩文化与品质生活指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4B2C20;
+            --secondary-color: #8D6E63;
+            --accent-color: #C67B5C;
+            --bg-color: #FDFBF7;
+            --card-bg: #FFFFFF;
+            --text-main: #2C2C2C;
+            --text-light: #666666;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(75, 44, 32, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/coffeebean/1920/1080.jpg') no-repeat center center/cover;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(75, 44, 32, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Content Sections */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Product List */
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .product-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            display: flex;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-item:hover {
+            transform: scale(1.01);
+        }
+
+        .product-img {
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .product-info {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .product-tag {
+            font-size: 12px;
+            color: var(--accent-color);
+            background: rgba(198, 123, 92, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .guide-list li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .guide-list li:last-child {
+            border-bottom: none;
+        }
+
+        .guide-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .guide-list a:hover {
+            color: var(--accent-color);
+        }
+
+        .guide-list span {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Coffee Guide Section */
+        .guide-section {
+            background-color: #fff;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .guide-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            group: cursor;
+        }
+
+        .guide-card img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .guide-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .guide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: #fff;
+        }
+
+        .guide-overlay h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .guide-overlay p {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-color);
+            list-style: none;
+            position: relative;
+            padding-right: 40px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 24px;
+            line-height: 1;
+            color: var(--accent-color);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-content {
+            padding: 20px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero {
+                height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .product-item {
+                flex-direction: column;
+            }
+
+            .product-img {
+                width: 100%;
+                height: 200px;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo"><span>意</span>浓咖啡</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#products">咖啡豆</a></li>
+                    <li><a href="#equipment">咖啡机</a></li>
+                    <li><a href="#guides">制作指南</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册会员</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <h1>探寻意式浓缩的醇厚灵魂</h1>
+                <p>从阿拉比卡豆的精选烘焙到完美萃取，我们致力于为您呈现最纯正的意式咖啡体验。</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#products" class="btn btn-primary">浏览咖啡豆</a>
+                    <a href="#guides" class="btn btn-outline" style="border-color: #fff; color: #fff;">学习拉花</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="container">
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">☕</div>
+                    <h3>严选豆源</h3>
+                    <p>源自埃塞俄比亚与哥伦比亚的高海拔产区，每一颗豆子都经过人工筛选。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>专业烘焙</h3>
+                    <p>中度烘焙工艺，最大程度保留咖啡豆的果酸与焦香风味。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>快速配送</h3>
+                    <p>顺丰冷链直发，确保您收到的咖啡豆处于最佳赏味期。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>精选意式咖啡豆</h2>
+                    <p>为意式浓缩机与摩卡壶定制的黄金拼配</p>
+                </div>
+                <div class="grid-layout">
+                    <div class="product-list">
+                        <article class="product-item">
+                            <div class="product-img">
+                                <img src="https://picsum.photos/seed/espresso1/400/300.jpg" alt="经典意式拼配豆">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">畅销推荐</span>
+                                <h3>经典意式拼配豆 1kg</h3>
+                                <p>由巴西曼特宁与哥伦比亚阿拉比卡混合而成，口感醇厚，油脂丰富，适合日常意式咖啡制作。</p>
+                                <div class="product-meta">
+                                    <div class="price">¥ 128.00</div>
+                                    <button class="btn btn-outline">加入购物车</button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="product-item">
+                            <div class="product-img">
+                                <img src="https://picsum.photos/seed/espresso2/400/300.jpg" alt="浅烘焙单品豆">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">风味独特</span>
+                                <h3>耶加雪菲 浅烘焙 500g</h3>
+                                <p>保留了明亮的柠檬与茉莉花香，酸质明亮活泼，适合喜欢手冲或奶咖融合风味的用户。</p>
+                                <div class="product-meta">
+                                    <div class="price">¥ 88.00</div>
+                                    <button class="btn btn-outline">加入购物车</button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="product-item">
+                            <div class="product-img">
+                                <img src="https://picsum.photos/seed/espresso3/400/300.jpg" alt="深烘焙意式豆">
+                            </div>
+                            <div class="product-info">
+                                <span class="product-tag">浓郁口感</span>
+                                <h3>危地马拉 安提瓜 深烘焙</h3>
+                                <p>带有明显的黑巧克力与香料风味，低酸高醇，是制作美式咖啡的绝佳选择。</p>
+                                <div class="product-meta">
+                                    <div class="price">¥ 115.00</div>
+                                    <button class="btn btn-outline">加入购物车</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <aside>
+                        <div class="sidebar-widget">
+                            <h4 class="widget-title">选购指南</h4>
+                            <ul class="guide-list">
+                                <li><a href="#">如何判断咖啡豆的新鲜度？ <span>›</span></a></li>
+                                <li><a href="#">意式浓缩与美式的区别 <span>›</span></a></li>
+                                <li><a href="#">咖啡豆保存期限详解 <span>›</span></a></li>
+                                <li><a href="#">不同烘焙度的风味特征 <span>›</span></a></li>
+                                <li><a href="#">如何根据口味拼配豆 <span>›</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-widget" style="background: var(--primary-color); color: #fff;">
+                            <h4 class="widget-title" style="border-color: rgba(255,255,255,0.3);">订阅优惠</h4>
+                            <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 15px;">订阅我们的周刊，获取最新烘焙资讯及首单8折优惠。</p>
+                            <div style="display: flex; gap: 5px;">
+                                <input type="email" placeholder="您的邮箱" style="width: 100%; padding: 8px; border-radius: 4px; border: none; outline: none;">
+                                <button class="btn btn-primary" style="padding: 8px 12px;">GO</button>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guides Section -->
+        <section id="guides" class="section guide-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>咖啡制作与拉花教程</h2>
+                    <p>从新手到大师，一步步掌握意式咖啡精髓</p>
+                </div>
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <img src="https://picsum.photos/seed/latteart1/400/300.jpg" alt="心形拉花教程">
+                        <div class="guide-overlay">
+                            <h4>心形拉花入门</h4>
+                            <p>新手必学的基础图形</p>
+                        </div>
+                    </div>
+                    <div class="guide-card">
+                        <img src="https://picsum.photos/seed/latteart2/400/300.jpg" alt="拿铁制作步骤">
+                        <div class="guide-overlay">
+                            <h4>完美拿铁制作</h4>
+                            <p>牛奶打发与融合技巧</p>
+                        </div>
+                    </div>
+                    <div class="guide-card">
+                        <img src="https://picsum.photos/seed/latteart3/400/300.jpg" alt="咖啡机清洗">
+                        <div class="guide-overlay">
+                            <h4>咖啡机日常清洁</h4>
+                            <p>延长机器使用寿命</p>
+                        </div>
+                    </div>
+                    <div class="guide-card">
+                        <img src="https://picsum.photos/seed/latteart4/400/300.jpg" alt="手冲咖啡">
+                        <div class="guide-overlay">
+                            <h4>手冲咖啡进阶</h4>
+                            <p>控制水流与萃取时间</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container faq-container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于意浓咖啡与咖啡器具的疑问</p>
+                </div>
+                <details>
+                    <summary>意式浓缩咖啡对设备有什么要求？</summary>
+                    <div class="faq-content">
+                        制作标准的意式浓缩通常需要使用带有压力泵的意式咖啡机。家庭入门推荐选择9Bar压力的半自动咖啡机。如果是手动摩卡壶，也能制作出浓缩咖啡，但风味和油脂表现与机器萃取略有不同。
+                    </div>
+                </details>
+                <details>
+                    <summary>咖啡豆开封后应该如何保存？</summary>
+                    <div class="faq-content">
+                        开封后的咖啡豆建议尽快在2-3周内饮用完毕。最好将剩余豆子放入密封罐中，排除罐内空气，并置于阴凉、干燥、避光处保存。千万不要放入冰箱，因为冷凝水会导致豆子受潮变质。
+                    </div>
+                </details>
+                <details>
+                    <summary>浅烘焙和深烘焙的咖啡豆哪个更适合做拿铁？</summary>
+                    <div class="faq-content">
+                        对于喜欢奶咖（如拿铁、澳白）的用户，深烘焙豆通常更受欢迎。深烘焙豆的苦味和焦香能更好地中和牛奶的甜味，口感更加醇厚顺滑；而浅烘焙豆酸度较高，可能会在奶咖中显得突兀。
+                    </div>
+                </details>
+                <details>
+                    <summary>如何挑选一款适合自己的家用咖啡机？</summary>
+                    <div class="faq-content">
+                        首先考虑预算，其次关注萃取压力（建议9Bar以上）、锅炉材质（不锈钢优于铝合金）以及是否具备温控功能。如果是新手，全自动咖啡机操作简单但风味略逊；半自动咖啡机需要手动压粉和打奶泡，但能更好地控制咖啡风味。
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color: #fff; margin-bottom: 15px; display: inline-block;">
+                        <span>意</span>浓咖啡
+                    </a>
+                    <p>专注于传播意式咖啡文化，提供高品质的咖啡豆与专业的咖啡器具，陪伴每一个热爱咖啡生活的时刻。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品中心</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">意式咖啡豆</a></li>
+                        <li><a href="#">手冲精品豆</a></li>
+                        <li><a href="#">家用咖啡机</a></li>
+                        <li><a href="#">咖啡配件</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">配送政策</a></li>
+                        <li><a href="#">退换货说明</a></li>
+                        <li><a href="#">咖啡学院</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">电话：400-123-4567</a></li>
+                        <li><a href="#">邮箱：service@yinong.com</a></li>
+                        <li><a href="#">地址：上海市咖啡大道88号</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2023 意浓咖啡. All Rights Reserved. 本页面为设计演示，非真实商业网站。
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                      </html>
