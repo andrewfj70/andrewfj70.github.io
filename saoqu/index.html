@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="骚曲网为您提供古典与现代文学中“骚曲”的深度解读、赏析与分类。探索诗歌艺术、音乐美学及文学流派，发现隐藏在文字与旋律中的情感共鸣。">
+    <meta name="keywords" content="骚曲,诗歌,文学赏析,古典音乐,情感表达,诗歌流派">
+    <title>骚曲-古典与现代诗歌音乐赏析与文学解读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #d35400;
+            --bg-color: #f9f7f2;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 0.3rem 1rem;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(211, 84, 0, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* 主要内容区 */
+        main {
+            padding-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--accent-color);
+        }
+
+        /* 网格布局 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .card-footer {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        /* 文学流派侧边栏 */
+        .sidebar {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .sidebar-list li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list a {
+            display: block;
+            padding: 0.8rem 0;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        /* 知识问答 */
+        .faq-section {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-question::before {
+            content: "Q";
+            background: var(--primary-color);
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding-left: 1.75rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="logo">骚曲<span>.</span></a>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">诗歌赏析</a></li>
+                <li><a href="#">音乐美学</a></li>
+                <li><a href="#">流派百科</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索诗句、曲名或作者...">
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h1>探寻文字与旋律的灵魂共鸣</h1>
+        <p>骚曲不仅是文学的修辞，更是情感的宣泄。在这里，我们解读古典的哀愁与现代的自由。</p>
+        <div class="hero-tags">
+            <span class="tag">十四行诗</span>
+            <span class="tag">抒情歌谣</span>
+            <span class="tag">浪漫主义</span>
+            <span class="tag">古典乐章</span>
+        </div>
+    </section>
+
+    <div class="grid-3">
+        <!-- 文章卡片 1 -->
+        <article class="card">
+            <div class="card-img">
+                <img src="https://picsum.photos/seed/poetry1/400/300" alt="诗歌与音乐的关系">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>诗歌赏析</span>
+                    <span>2023-10-24</span>
+                </div>
+                <h2 class="card-title"><a href="#">诗歌与音乐的共生：从古至今的“骚曲”演变</a></h2>
+                <p class="card-excerpt">探讨文学中的“骚曲”概念如何随着时代演变，从早期的吟唱到现代的诗歌朗诵，分析其韵律美与情感表达的核心机制。</p>
+                <div class="card-footer">
+                    <span>作者：文学观察</span>
+                    <a href="#" class="btn btn-outline">阅读全文</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 文章卡片 2 -->
+        <article class="card">
+            <div class="card-img">
+                <img src="https://picsum.photos/seed/music2/400/300" alt="古典乐章赏析">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>音乐美学</span>
+                    <span>2023-10-22</span>
+                </div>
+                <h2 class="card-title"><a href="#">古典乐章中的“骚曲”式情感表达</a></h2>
+                <p class="card-excerpt">解析贝多芬与肖邦作品中蕴含的“骚曲”特质，即那种热烈、奔放而又略带忧伤的内在张力，以及它在奏鸣曲式中的体现。</p>
+                <div class="card-footer">
+                    <span>作者：乐理笔记</span>
+                    <a href="#" class="btn btn-outline">阅读全文</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 文章卡片 3 -->
+        <article class="card">
+            <div class="card-img">
+                <img src="https://picsum.photos/seed/novel3/400/300" alt="现代文学流派">
+            </div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span>文学流派</span>
+                    <span>2023-10-20</span>
+                </div>
+                <h2 class="card-title"><a href="#">现代派诗歌中的“骚曲”意象解析</a></h2>
+                <p class="card-excerpt">在现代派诗歌中，“骚曲”往往作为一种打破格律束缚、强调个人主观情感的象征。本文通过具体作品分析其意象构建。</p>
+                <div class="card-footer">
+                    <span>作者：现代诗社</span>
+                    <a href="#" class="btn btn-outline">阅读全文</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="grid-3" style="grid-template-columns: 2fr 1fr;">
+        <!-- 左侧：详细内容区 -->
+        <section class="content-area">
+            <div class="section-title">
+                <h2>深度解读：什么是“骚曲”？</h2>
+                <a href="#">查看更多专题 &rarr;</a>
+            </div>
+            
+            <article class="card" style="margin-bottom: 2rem;">
+                <div class="card-body">
+                    <h3 class="card-title">定义与起源</h3>
+                    <p class="card-excerpt" style="margin-bottom: 1rem;">“骚曲”一词在文学与音乐领域具有多重含义。在文学上，它常指代一种具有强烈抒情色彩、情感奔放的诗体，源于对《楚辞》中“骚体”的继承与演变，强调情感的自然流露与辞藻的华丽。</p>
+                    <p class="card-excerpt">在音乐领域，特别是古典音乐中，“Serenade”（小夜曲/骚曲）指一种为室外演奏而作的轻音乐形式，通常包含多乐章，风格优雅、轻松，多见于浪漫主义时期。</p>
+                </div>
+            </article>
+
+            <div class="grid-3" style="grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                <article class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">浪漫主义特征</h4>
+                        <p style="font-size: 0.9rem; color: #666;">强调主观情感，反对古典主义的理性束缚，注重个人内心世界的独白。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">韵律与节奏</h4>
+                        <p style="font-size: 0.9rem; color: #666;">打破固定格律，追求自然流动的节奏感，常采用自由诗或变格体。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 右侧：侧边栏 -->
+        <aside>
+            <div class="sidebar">
+                <h3 class="card-title" style="margin-bottom: 1rem;">文学流派分类</h3>
+                <ul class="sidebar-list">
+                    <li><a href="#">楚辞·离骚体</a></li>
+                    <li><a href="#">十四行诗</a></li>
+                    <li><a href="#">俳句与短歌</a></li>
+                    <li><a href="#">自由诗</a></li>
+                    <li><a href="#">现代抒情诗</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar" style="margin-top: 2rem;">
+                <h3 class="card-title" style="margin-bottom: 1rem;">热门推荐</h3>
+                <ul class="sidebar-list">
+                    <li><a href="#">莎士比亚十四行诗全集</a></li>
+                    <li><a href="#">叶芝的诗歌艺术</a></li>
+                    <li><a href="#">古典音乐中的夜曲</a></li>
+                    <li><a href="#">普希金的抒情诗选</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <section class="faq-section">
+        <div class="section-title">
+            <h2>常见问题 (FAQ)</h2>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">“骚曲”和“骚体诗”有什么区别？</div>
+            <div class="faq-answer">“骚体诗”特指《楚辞》中的一种诗歌体裁，以屈原的《离骚》为代表，具有独特的句式和词汇。“骚曲”则是一个更宽泛的概念，既可以指这种特定的诗歌形式，也可以指具有相似抒情风格的诗歌或音乐作品。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">现代流行歌曲算不算“骚曲”？</div>
+            <div class="faq-answer">从广义的文学和美学角度看，任何具有强烈抒情性、旨在表达个人情感的作品都可以被视为“骚曲”的延伸。但在学术分类上，现代流行歌曲通常被归类为流行音乐，除非其歌词具有极高的文学价值或采用了古典的诗歌结构。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">如何欣赏古典乐中的“小夜曲”？</div>
+            <div class="faq-answer">欣赏小夜曲时，应注意其旋律的流畅性、配器的轻盈感以及情感表达的细腻度。它通常不是严肃的戏剧性作品，而是用于娱乐和放松的室内乐形式，重点在于聆听其营造的氛围。</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>骚曲.</h3>
+                <p style="color: #ccc; font-size: 0.9rem; line-height: 1.6;">致力于传播古典文学与现代诗歌的美学价值，连接文字与音乐的世界。</p>
+            </div>
+            <div class="footer-col">
+                <h3>内容栏目</h3>
+                <ul>
+                    <li><a href="#">诗歌赏析</a></li>
+                    <li><a href="#">音乐鉴赏</a></li>
+                    <li><a href="#">文学史话</a></li>
+                    <li><a href="#">作者专栏</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系合作</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 骚曲网 版权所有. 保留所有权利.
+        </div>
+    </div>
+</footer>
+
+</body>
+          </html>
