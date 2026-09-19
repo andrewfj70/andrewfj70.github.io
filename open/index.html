@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenIce课堂 - 开放式在线学习平台与职业技能提升指南</title>
+    <meta name="description" content="OpenIce课堂是一个专注于计算机科学与软件工程教育的在线学习平台，提供C/C++编程、数据结构与算法、计算机网络、操作系统等核心课程的深度解析与实战教程。">
+    <meta name="keywords" content="OpenIce课堂, 在线编程, C语言, 数据结构, 算法, 计算机网络, 操作系统, 编程入门">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #0f172a;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Courses Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-thumb {
+            height: 160px;
+            background-color: #e2e8f0;
+            position: relative;
+        }
+        
+        .course-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .course-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-category {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .course-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .course-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .course-students {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Learning Path Section */
+        .path-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .path-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .path-info p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .path-steps {
+            margin-top: 30px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .step-num {
+            width: 30px;
+            height: 30px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .path-visual {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #a5b4fc;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .path-visual::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px dashed #cbd5e1;
+            border-radius: 6px;
+            z-index: 0;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #e2e8f0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: #cbd5e1;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .path-container {
+                grid-template-columns: 1fr;
+            }
+
+            .path-visual {
+                order: -1;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                OpenIce<span>课堂</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#courses">核心课程</a></li>
+                    <li><a href="#path">学习路径</a></li>
+                    <li><a href="#resources">资源下载</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline" onclick="window.location.href='#login'">登录</button>
+                <button class="btn btn-primary" onclick="window.location.href='#register'">免费注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>构建坚实的计算机科学基础</h1>
+                <p>OpenIce课堂致力于提供高质量、系统化的编程与算法教程。从C语言入门到操作系统原理，助你掌握核心技术，提升工程能力。</p>
+                <div style="display: flex; justify-content: center; gap: 15px;">
+                    <button class="btn btn-primary" style="background: white; color: var(--primary-color);">开始学习</button>
+                    <button class="btn btn-outline" style="border-color: white; color: white;">浏览课程大纲</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <strong>50+</strong>
+                        <span>精品课程</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>100k+</strong>
+                        <span>活跃学员</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>500+</strong>
+                        <span>实战案例</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h3>系统化知识体系</h3>
+                        <p>拒绝碎片化学习，我们按照计算机科学教学大纲，为你梳理从底层原理到上层应用的完整知识脉络。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <h3>代码实战驱动</h3>
+                        <p>理论结合实践，每个知识点都配有可运行的代码示例和习题，让你在动手过程中加深理解。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>社区互助答疑</h3>
+                        <p>遇到难题？加入OpenIce课堂社区，与来自全国各地的开发者交流讨论，获取及时的反馈与帮助。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="section-padding" style="background-color: white;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>精选核心课程</h2>
+                    <p>涵盖编程语言、数据结构与算法、计算机网络与操作系统等计算机基础核心领域</p>
+                </div>
+                <div class="course-grid">
+                    <!-- Course 1 -->
+                    <article class="course-card">
+                        <div class="course-thumb">
+                            <img src="https://picsum.photos/seed/code1/400/250" alt="C语言基础">
+                            <span class="course-tag">入门首选</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">编程语言</div>
+                            <h3 class="course-title">C语言深度解析与指针实战</h3>
+                            <p class="course-desc">从变量类型到内存管理，彻底攻克C语言难点，掌握底层编程思维。</p>
+                            <div class="course-meta">
+                                <div class="course-students">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                    12,500 人在学
+                                </div>
+                                <span>32 课时</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course 2 -->
+                    <article class="course-card">
+                        <div class="course-thumb">
+                            <img src="https://picsum.photos/seed/algo/400/250" alt="算法与数据结构">
+                            <span class="course-tag">核心必修</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">算法与数据结构</div>
+                            <h3 class="course-title">数据结构从入门到精通</h3>
+                            <p class="course-desc">深入理解链表、树、图等数据结构，掌握排序、查找等经典算法。</p>
+                            <div class="course-meta">
+                                <div class="course-students">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                    8,300 人在学
+                                </div>
+                                <span>45 课时</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course 3 -->
+                    <article class="course-card">
+                        <div class="course-thumb">
+                            <img src="https://picsum.photos/seed/net/400/250" alt="计算机网络">
+                            <span class="course-tag">底层原理</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-category">计算机网络</div>
+                            <h3 class="course-title">计算机网络原理与协议</h3>
+                            <p class="course-desc">详解OSI七层模型，深入TCP/IP协议栈，理解互联网如何工作。</p>
+                            <div class="course-meta">
+                                <div class="course-students">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                    5,200 人在学
+                                </div>
+                                <span>28 课时</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="btn btn-outline">查看全部课程</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Path Section -->
+        <section id="path" class="section-padding">
+            <div class="container">
+                <div class="path-container">
+                    <div class="path-info">
+                        <h2>科学的编程学习路径</h2>
+                        <p>OpenIce课堂根据企业招聘标准和技术发展趋势，为你规划了从初学者到高级工程师的成长路线。</p>
+                        
+                        <div class="path-steps">
+                            <div class="step-item">
+                                <div class="step-num">1</div>
+                                <div class="step-content">
+                                    <h4>编程语言基础</h4>
+                                    <p>选择一门主流语言（如C或Python）作为起点，掌握语法、控制流与函数。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">2</div>
+                                <div class="step-content">
+                                    <h4>数据结构与算法</h4>
+                                    <p>提升代码效率，通过LeetCode等实战题目训练逻辑思维与解题能力。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">3</div>
+                                <div class="step-content">
+                                    <h4>计算机基础理论</h4>
+                                    <p>学习操作系统、计算机网络，理解程序运行的底层机制。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">4</div>
+                                <div class="step-content">
+                                    <h4>项目实战与进阶</h4>
+                                    <p>参与开源项目或独立开发应用，完成从理论到工程的跨越。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="path-visual">
+                        <div class="code-block">
+#include <stdio.h>
+void learnPath() {
+    printf("Step 1: Master Syntax\n");
+    printf("Step 2: Data Structures & Algorithms\n");
+    printf("Step 3: OS & Network\n");
+    printf("Step 4: Build Real Projects\n");
+    printf("Success: Ready for Engineering!\n");
+}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section-padding" style="background-color: white;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>学习资源与工具</h2>
+                    <p>除了视频课程，我们还提供编译器下载、开发环境配置指南及经典书籍推荐。</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <a href="#" class="btn btn-outline" style="text-align: center; display: block; padding: 20px;">GCC 编译器下载</a>
+                    <a href="#" class="btn btn-outline" style="text-align: center; display: block; padding: 20px;">VS Code 配置指南</a>
+                    <a href="#" class="btn btn-outline" style="text-align: center; display: block; padding: 20px;">LeetCode 刷题库</a>
+                    <a href="#" class="btn btn-outline" style="text-align: center; display: block; padding: 20px;">经典书籍 PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">OpenIce课堂适合零基础用户吗？</div>
+                        <div class="faq-answer">是的，我们专门设计了从C语言入门到进阶的完整体系，适合完全没有编程经验的新手。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">课程内容会更新吗？</div>
+                        <div class="faq-answer">我们会定期更新课程内容，确保技术栈与行业最新发展保持同步，并修复已知的Bug。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">购买课程后可以永久观看吗？</div>
+                        <div class="faq-answer">是的，一旦购买，您将拥有该课程的永久观看权限，并可随时复习。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何获得学习证书？</div>
+                        <div class="faq-answer">完成指定课程的学习并通过考核后，我们将颁发结业证书，供您在求职时参考。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>OpenIce课堂</h3>
+                    <p>致力于打造最纯粹、最系统的计算机科学在线教育平台。让每个人都能享受到高质量的技术教育资源。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">师资力量</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>学习资源</h4>
+                    <ul>
+                        <li><a href="#">课程列表</a></li>
+                        <li><a href="#">免费试听</a></li>
+                        <li><a href="#">编程工具</a></li>
+                        <li><a href="#">学习社区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 OpenIce课堂. All rights reserved. 仅供展示用途。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
